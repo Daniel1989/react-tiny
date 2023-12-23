@@ -1,0 +1,40 @@
+{
+	"name": "big-react",
+	"version": "0.0.0",
+	"repository": "git@github.com:BetaSu/big-react.git",
+	"author": "kasong <313439271@qq.com>",
+	"license": "MIT",
+	"scripts": {
+		"build:dev": "rm -rf dist && rollup --config scripts/rollup/dev.config.js",
+		"lint": "eslint --ext .js,.ts,.jsx,.tsx --fix --quiet ./packages",
+		"test:only": "jest",
+		"test": "npm run build:dev && jest"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.6",
+		"@babel/plugin-transform-react-jsx": "^7.17.12",
+		"@babel/preset-env": "^7.18.6",
+		"@babel/preset-react": "^7.23.3",
+		"@commitlint/cli": "^17.0.2",
+		"@commitlint/config-conventional": "^17.0.2",
+		"@rollup/plugin-babel": "^5.3.1",
+		"@rollup/plugin-node-resolve": "^13.3.0",
+		"@typescript-eslint/eslint-plugin": "^5.28.0",
+		"@typescript-eslint/parser": "^5.28.0",
+		"commitlint": "^17.0.2",
+		"eslint": "^8.17.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"husky": "^8.0.1",
+		"jest": "^28.1.2",
+		"jest-config": "^28.1.2",
+		"jest-environment-jsdom": "^28.1.2",
+		"lint-staged": "^13.0.2",
+		"prettier": "^2.7.1",
+		"rollup": "^2.75.6",
+		"rollup-plugin-generate-package-json": "^3.2.0",
+		"rollup-plugin-typescript2": "^0.32.1",
+		"tslib": "^2.4.0",
+		"typescript": "^4.7.3"
+	}
+}

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js
+"></script>
+        <!-- <script src="./dist/node_modules/react/index.js"></script>
+        <script src="./dist/node_modules/react-dom/index.js"></script> -->
+        <script>
+            requirejs(["./dist/node_modules/react/index.js", "./dist/node_modules/react-dom/index.js"], function(react, reactdom){
+                window.react = react
+                window.reactdom = reactdom
+                const ComponentFC = () => {
+                    return react.createElement("div")
+                };
+                const element = react.createElement('p', {className: 'demo'}, 'hello');
+                reactdom.createRoot(document.getElementById("root")).render(element)
+            })
+            
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>
