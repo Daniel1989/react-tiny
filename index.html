@@ -5,12 +5,20 @@
         <!-- <script src="./dist/node_modules/react/index.js"></script>
         <script src="./dist/node_modules/react-dom/index.js"></script> -->
         <script>
-            requirejs(["./dist/node_modules/react/index.js", "./dist/node_modules/react-dom/index.js"], function(react, reactdom){
+            requirejs.config({
+  // module name mapped to CDN URL
+  paths: {
+    // Require.js appends `.js` extension for you
+    react: './dist/node_modules/react/index',
+    'react-dom': './dist/node_modules/react-dom/index',
+  },
+});
+            requirejs(['react', 'react-dom'], function(react, reactdom){
                 window.react = react
                 window.reactdom = reactdom
-                const ComponentFC = () => {
-                    return react.createElement("div")
-                };
+                // TODO: 1223要把这两种都渲染完成
+                // 目前问题是渲染了p节点，但是没有渲染class以及里面的text
+                
                 const element = react.createElement('p', {className: 'demo'}, 'hello');
                 reactdom.createRoot(document.getElementById("root")).render(element)
             })

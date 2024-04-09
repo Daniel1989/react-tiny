@@ -44,19 +44,22 @@ const bubbleProperties = (completeWork: FiberNode) => {
 
 
 export const completeWork = (workInProgress: FiberNode) => {
+
+    // 到这里断点，看他到底有哪些类型进入了
     const newProps = workInProgress.pendingProps;
+    console.log(JSON.stringify(newProps))
     switch(workInProgress.tag) {
         case HostComponent:
             const instance = createInstance(workInProgress.type)
             appendAllChildren(instance, workInProgress)
             workInProgress.stateNode = instance
-
             bubbleProperties(workInProgress)
             return null;
         case HostRoot:
             bubbleProperties(workInProgress)
             return null;
         case HostText:
+            // 按理应该进入到这里，但是content是空的，导致没有
             const textInstance = createTextInstance(newProps.content)
             workInProgress.stateNode = textInstance;
             bubbleProperties(workInProgress)

@@ -83,6 +83,7 @@ export const createWorkInProgress = (
     current: FiberNode,
     pendingProps: Props
 ): FiberNode => {
+    console.log("in create work in progress", current, pendingProps)
     let wip = current.alternate;
 
     if(wip == null) {

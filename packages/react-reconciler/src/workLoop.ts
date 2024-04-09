@@ -80,6 +80,7 @@ function workLoop() {
 }
 
 function performUnitOfWork(fiber: FiberNode) {
+    console.log("fiber node", fiber)
     const next = beginWork(fiber);
     if(next === null) {
         completeUnitOfWork(fiber);

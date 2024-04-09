@@ -39,6 +39,7 @@ function ChildReconciler(shouldTrackEffect: boolean) {
         currentFirstChild: FiberNode | null,
         newChild?: ReactElement
     ): FiberNode | null {
+        console.log('child类型', newChild)
         if(typeof newChild === 'object' && newChild !== null) {
             switch(newChild.$$typeof) {
                 case REACT_ELEMENT_TYPE:

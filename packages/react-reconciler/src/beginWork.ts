@@ -6,6 +6,7 @@ import { HostComponent, HostRoot, HostText, FunctionComponent } from "./workTags
 import { renderWithHooks } from "./fiberHooks";
 
 export const beginWork = (workInProgress: FiberNode) => {
+    console.log("progress", workInProgress.tag)
     switch(workInProgress.tag) {
         case HostRoot:
             return updateHostRoot(workInProgress);
